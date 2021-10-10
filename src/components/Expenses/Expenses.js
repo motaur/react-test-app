@@ -1,3 +1,4 @@
+import React from "react";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import Card from "../UI/Card/Card";
 import "./Expenses.css";
@@ -5,9 +6,11 @@ import "./Expenses.css";
 const Expenses = (props) => {
   return (
     <Card className="expenses">
-      <ExpenseItem item={props.expensesList[0]}></ExpenseItem>
-      <ExpenseItem item={props.expensesList[1]}></ExpenseItem>
-      <ExpenseItem item={props.expensesList[2]}></ExpenseItem>
+      {props.expensesList.map((item) => (
+        <React.Fragment>
+          <ExpenseItem item={item}></ExpenseItem>
+        </React.Fragment>
+      ))}
     </Card>
   );
 };
