@@ -1,8 +1,9 @@
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import React, { useState } from "react";
 
 const App = () => {
-  const expenses = [
+  const expensesMockData = [
     {
       id: "e1",
       date: new Date(2021, 2, 28),
@@ -23,9 +24,13 @@ const App = () => {
     },
   ];
 
+  const [expenses, setExpenses] = useState(expensesMockData);
+
   const addExpenseHandler = (expense) => {
-    console.log("In App.js");
     console.log(expense);
+    let expList = expenses;
+    expList.push(expense);
+    setExpenses(expList);
   };
 
   return (
