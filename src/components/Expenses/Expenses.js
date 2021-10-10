@@ -7,7 +7,7 @@ const Expenses = (props) => {
   return (
     <Card className="expenses">
       {props.expensesList.map((item) => (
-        <React.Fragment>
+        <React.Fragment key={item.id}>
           <ExpenseItem item={item}></ExpenseItem>
         </React.Fragment>
       ))}
