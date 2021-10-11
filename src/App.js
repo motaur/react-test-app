@@ -11,13 +11,13 @@ const expensesMockData = [
   },
   {
     id: "e2",
-    date: new Date(2021, 4, 29),
+    date: new Date(2020, 4, 29),
     title: "TV",
     amount: 300,
   },
   {
     id: "e3",
-    date: new Date(2000, 2, 5),
+    date: new Date(2019, 2, 5),
     title: "Car",
     amount: 1,
   },
