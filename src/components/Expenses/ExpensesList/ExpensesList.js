@@ -1,18 +1,16 @@
 import ExpenseItem from "../../ExpenseItem/ExpenseItem";
 import "./ExpensesList.css";
 
-const Expenses = (props) => {
+const ExpensesList = (props) => {
+  if (props.list.length === 0)
+    return <h2 className="expenses-list__fallback">No items to show</h2>;
   return (
-    <>
-      {props.list.length === 0 ? (
-        <h3>No items to show</h3>
-      ) : (
-        props.list.map((item) => (
-          <ExpenseItem item={item} key={item.id}></ExpenseItem>
-        ))
-      )}
-    </>
+    <ul className="expenses-list">
+      {props.list.map((item) => (
+        <ExpenseItem item={item} key={item.id}></ExpenseItem>
+      ))}
+    </ul>
   );
 };
 
-export default Expenses;
+export default ExpensesList;
